@@ -1,0 +1,5 @@
+package com.rto.dto;
+
+public class RegDTO {
+
+}

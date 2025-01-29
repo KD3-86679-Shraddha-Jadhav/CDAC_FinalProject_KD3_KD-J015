@@ -1,0 +1,13 @@
+package com.rto.service;
+
+import com.rto.dto.ApiResponse;
+
+import com.rto.dto.RegDTO;
+import com.rto.dto.UpdateDTO;
+
+
+public interface UserService {
+
+	ApiResponse addNewUser(RegDTO dto);
+	ApiResponse updateUser( UpdateDTO user);
+}
