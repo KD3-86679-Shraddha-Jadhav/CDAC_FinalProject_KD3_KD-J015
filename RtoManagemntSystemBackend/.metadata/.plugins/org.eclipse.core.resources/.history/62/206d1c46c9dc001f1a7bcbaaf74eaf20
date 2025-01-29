@@ -1,0 +1,47 @@
+package com.rto.service;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.rto.custom_exception.ApiException;
+import com.rto.dao.UserDao;
+import com.rto.dto.ApiResponse;
+import com.rto.dto.RegDTO;
+import com.rto.pojos.Registeration;
+import com.rto.pojos.Role;
+
+@Service
+@Transactional
+public class UserImplService implements UserService {
+
+	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
+	private ModelMapper mapper;
+	
+	@Override
+	public ApiResponse addNewUser(RegDTO dto) {
+////		// 1. get category by it's id
+//			Registeration user=userDao.
+//						findById(dto.getId())
+//						.orElseThrow();
+				
+				
+
+				//3. confirm role
+				if(dto.getRole()==Role.USER) {
+					//4. map dto -> entity
+					Registeration reg=mapper.map(dto, Registeration.class);			
+					
+					userDao.save(reg);
+					return new ApiResponse("User added ");
+				}
+				
+				throw new ApiException("You must be logged in as blogger to add a post !!!!");
+			}
+	}
+
+

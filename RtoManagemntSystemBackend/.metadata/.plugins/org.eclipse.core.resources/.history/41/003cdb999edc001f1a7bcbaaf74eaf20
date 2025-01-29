@@ -1,0 +1,5 @@
+package com.rto.controller;
+
+public class UserController {
+
+}

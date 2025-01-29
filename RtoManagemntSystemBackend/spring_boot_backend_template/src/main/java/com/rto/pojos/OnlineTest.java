@@ -1,0 +1,41 @@
+//package com.rto.pojos;
+//
+//import java.util.List;
+//
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Table;
+//import lombok.Getter;
+//import lombok.NoArgsConstructor;
+//import lombok.Setter;
+//import lombok.ToString;
+//
+//@Entity
+//@Table(name = "OnlineTest")
+//@NoArgsConstructor
+//@Getter
+//@Setter
+//@ToString
+//public class OnlineTest extends BaseEntity {
+//
+//	 private Long testId;
+//	    private String testName;
+//	    private List<Question> questions; // List of questions in the test
+//}
+//	    // Nested class to represent a Question
+//	    public static class Question {
+//
+//	        private Long questionId;
+//	        private String questionText;
+//	        private List<Option> options; // List of options for the question
+//	        private String correctAnswer;
+//	    }
+//	        public static class TestResult {
+//
+//	            private Long userId;
+//	            private Long testId;
+//	            private int totalQuestions;
+//	            private int correctAnswers;
+//	            private double score;
+//	            private boolean passed;
+//	        }
+//}
