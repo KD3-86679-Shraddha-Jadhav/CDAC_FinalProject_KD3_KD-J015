@@ -69,6 +69,20 @@ function Navbar() {
                 GetTestResult
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/ApplyForDL">Apply for DL</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/ApplyForLL">Apply for LL</Link>
+            </li>
+            <li>
+            <Link className="nav-link" to="/Maintainuser">Maintainuser</Link>
+            </li>
+            <li>
+            <Link className="nav-link" to="/QuizApp">QuizApp</Link>
+            </li>
+            
             <li className='nav-item'>
               <button onClick={onLogout} className='nav-link'>
                 Logout
