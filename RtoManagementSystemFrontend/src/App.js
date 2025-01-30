@@ -13,10 +13,7 @@ import ApplyForTest from './screens/ApplyForTest';
 import GetResult from './screens/GetResult';
 import Appointment from './screens/Appointment';
 import VehicleRegisteration from './screens/VehicleRegisteration';
-import ApplyForLL from './screens/ApplyForLL'
-import ApplyForDL from './screens/ApplyForDL'
-import Maintainuser from "./screens/Maintainuser"
-import QuizApp from "./screens/QuizApp"
+
 function App() {
   return (
     <div className="App">
@@ -30,11 +27,6 @@ function App() {
         <Route path='GetResult'element={<GetResult/>}/>
         <Route path='Appointment'element={<Appointment/>}/>
         <Route path='VehicleRegisteration'element={<VehicleRegisteration/>}/>
-        <Route path="/ApplyForLL" element={< ApplyForLL/>} />
-      <Route path="/ApplyForDL" element={<ApplyForDL/>} /> 
-      <Route path="/Maintainuser" element={<Maintainuser/>} /> 
-      <Route path="/QuizApp" element={< QuizApp />}/>
-      </Routes> 
 
 
       <ToastContainer/>
