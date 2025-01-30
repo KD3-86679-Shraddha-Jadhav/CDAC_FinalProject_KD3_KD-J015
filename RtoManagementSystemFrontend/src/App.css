@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,16 +26,16 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* Add this to your styles.css or App.css */
 .profile-container {
@@ -67,7 +67,7 @@
 .profile-item strong {
   color: #333;
   margin-right: 10px;
-}
+} 
 
 .profile-actions {
   display: flex;
@@ -95,10 +95,10 @@
 .btn-edit:hover {
   background-color: #ec971f;
 }
-
+ 
 
 /* Add this to your styles.css or App.css */
-.login-container {
+/* .login-container {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
@@ -121,8 +121,8 @@
 }
 
 .mb-3 {
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; */
+/* }
 
 .btn-primary {
   width: 100%;
@@ -132,22 +132,22 @@
 /* General Styles for the Registration Page*/
 
 
-body {
+/* body {
   font-family: Arial, sans-serif;
   background-color: #f7f9fc;
   margin: 0;
   padding: 0;
-}
+} */
 
-.registration-container {
+/* .registration-container {
   display: flex;
   justify-content: right;
   align-items: right;
   min-height: 100vh;
   padding: 20px;
-}
+} */
 
-.registration-form {
+/* .registration-form {
   background-color: #ffffff;
   padding: 40px;
   border-radius: 10px;
@@ -155,17 +155,17 @@ body {
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
-}
+} */ 
 
-.header {
+/* .header {
   text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
-}
+} */
 
 /* Form Field Styles */
-.registration-form .form-group {
+/* .registration-form .form-group {
   margin-bottom: 20px;
 }
 
@@ -186,10 +186,10 @@ body {
   box-sizing: border-box;
   background-color: #fff;
   transition: border-color 0.3s ease;
-}
+} */
 
 /* Focus State for Inputs and Select */
-.registration-form input:focus,
+/* .registration-form input:focus,
 .registration-form select:focus {
   border-color: #4CAF50;
   outline: none;
@@ -204,10 +204,10 @@ body {
   background-repeat: no-repeat;
   background-size: 10px 10px;
   padding-right: 30px;
-}
+} */
 
 /* Button Styles */
-.registration-form button {
+/* .registration-form button {
   width: 100%;
   padding: 12px;
   background-color: #4CAF50;
@@ -221,10 +221,10 @@ body {
 
 .registration-form button:hover {
   background-color: #45a049;
-}
+} */
 
 /* Footer Link Styles */
-.registration-form .footer {
+/* .registration-form .footer {
   text-align: center;
   margin-top: 20px;
 }
@@ -236,18 +236,18 @@ body {
 
 .registration-form .footer a:hover {
   text-decoration: underline;
-}
+} */
 
 
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .registration-form {
     padding: 30px;
   }
 
-  .header {
-    font-size: 1.8rem;
+  .header { */
+    /* font-size: 1.8rem;
   }
 }
 
@@ -282,14 +282,14 @@ h2 {
   font-weight: bold;
 } */
 
-.container {
+/* .container {
   max-width: 100%;
   padding: 50px;
   background-color: #f9f9f9; /* Light background for contrast */
-  font-family: Arial, sans-serif; /* Cleaner font style */
-}
-
-.card {
+  /* font-family: Arial, sans-serif; /* Cleaner font style */
+/* }  */
+ 
+/* .card {
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -314,20 +314,20 @@ h2 {
 
 label {
   flex: 1; /* Takes up equal space */
-  font-weight: bold;
+  /* font-weight: bold;
   font-size: 24px;
-  color: #0f0e0e;
-}
+  color: #0f0e0e; */
+/* } */ 
 
-input, select {
-  flex: 2; /* Takes up more space for better alignment */
-  padding: 10px;
+/* input, select {
+  flex: 2; Takes up more space for better alignment */
+  /* padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 14px;
-}
+} */
 
-button {
+/* button {
   width: 100%;
   padding: 10px;
   font-size: 20px;
@@ -368,16 +368,16 @@ a:hover {
     width: 100%;
   }
 }
-
+ */
 
 /* image*/
 
-.profile-container {
+/* .profile-container {
   max-width: 600px;
   margin: 30px auto;
   padding: 30px;
-  text-align: center;     /*changes*/
-  border-radius: 8px;
+  text-align: center;     changes */
+  /* border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -386,9 +386,9 @@ a:hover {
   font-size: 24px;
   color: #333;
   margin-bottom: 20px;
-}
+} */
 
-.profile-image-container {
+/* .profile-image-container {
   margin-bottom: 20px;
 }
 
@@ -403,18 +403,18 @@ a:hover {
 .profile-info {
   margin-bottom: 20px;
   text-align: left;
-}
+} */
 
-.profile-item {
+/* .profile-item {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
 .profile-actions {
   margin-top: 20px;
-}
+} */
 
-.profile-actions .btn {
+/* .profile-actions .btn {
   padding: 10px 20px;
   background-color: #f0ad4e;
   color: white;
@@ -423,15 +423,15 @@ a:hover {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-}
+} */
 
-.profile-actions .btn:hover {
+/* .profile-actions .btn:hover {
   background-color: #ec971f;
-}
+} */
 
 /*Apply for test css*/
 /* Basic styles for the test application form */
-.test-application-container {
+/* .test-application-container {
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
@@ -444,9 +444,9 @@ h2 {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
-}
+} */
 
-.form-container {
+/* .form-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -488,20 +488,20 @@ button:hover {
   color: red;
   font-size: 14px;
   margin-top: -10px;
-}
+} */
 
 
 /* Basic styles for the test result page */
-.test-result-container {
+/* .test-result-container {
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 
-h2 {
+/* h2 {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
@@ -570,11 +570,11 @@ button:hover {
 .result-message.failed {
   background-color: #f8d7da;
   color: #721c24;
-}
+} */
 
 
 /* Basic syyling for Appointmnet*/
-.appointment-container {
+/* .appointment-container {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
@@ -582,29 +582,29 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Heading styling */
-h2 {
+/* h2 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 20px;
-}
+} */
 
 /* Form styling */
-.appointment-form {
+/* .appointment-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
+} */
 
 /* Input and text area styling */
-.form-group {
+/* .form-group {
   display: flex;
   flex-direction: column;
-}
+} */
 
-label {
+/* label {
   font-size: 14px;
   margin-bottom: 5px;
 }
@@ -622,10 +622,10 @@ input[type="text"], input[type="date"], .radio-group {
 
 input[type="radio"] {
   margin-right: 5px;
-}
+} */
 
 /* Button styling */
-button {
+/* button {
   padding: 12px 20px;
   background-color: #007bff;
   color: white;
@@ -637,10 +637,10 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* Success and error messages */
-.error-message {
+/* .error-message {
   color: red;
   font-size: 14px;
   margin-top: -10px;
@@ -650,11 +650,11 @@ button:hover {
   color: green;
   font-size: 14px;
   margin-top: -10px;
-}
+} */
 
 
 /* Container for the form */
-.vehicle-registration-container {
+/* .vehicle-registration-container {
   max-width: 700px;
   margin: 40px auto;
   padding: 30px;
@@ -662,24 +662,24 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Form Heading */
-.registration-header {
+/* .registration-header {
   text-align: center;
   font-size: 30px;
   color: #343a40;
   margin-bottom: 20px;
-}
+} */
 
 /* Form Fields and Controls */
-.registration-form {
+/* .registration-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
+} */
 
-.form-group {
+/* .form-group {
   display: flex;
   flex-direction: column;
 }
@@ -688,9 +688,9 @@ label {
   font-size: 14px;
   color: #495057;
   margin-bottom: 5px;
-}
+} */
 
-input[type="text"], input[type="email"], input[type="tel"], select {
+/* input[type="text"], input[type="email"], input[type="tel"], select {
   padding: 10px;
   font-size: 14px;
   border-radius: 4px;
@@ -701,10 +701,10 @@ input[type="text"], input[type="email"], input[type="tel"], select {
 input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
   outline: none;
   border-color: #007bff;
-}
+} */
 
 /* Submit Button Styling */
-button {
+/* button {
   padding: 12px 20px;
   background-color: #007bff;
   color: white;
@@ -716,10 +716,10 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* Toast notification (optional) */
-.error-message {
+/* .error-message {
   color: red;
   font-size: 14px;
   margin-top: -10px;
@@ -729,7 +729,7 @@ button:hover {
   color: green;
   font-size: 14px;
   margin-top: -10px;
-}
+} */
 
 
 /*for registeration*/
