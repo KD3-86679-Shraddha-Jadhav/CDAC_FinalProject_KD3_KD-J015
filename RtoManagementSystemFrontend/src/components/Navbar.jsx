@@ -69,6 +69,7 @@ function Navbar() {
                 GetTestResult
               </Link>
             </li>
+
             <li className='nav-item'>
               <button onClick={onLogout} className='nav-link'>
                 Logout

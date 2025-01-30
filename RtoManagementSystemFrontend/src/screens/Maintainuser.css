@@ -1,0 +1,63 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Form Section */
+  .form-section {
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: hsl(149, 100%, 50%);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .button:hover {
+    background-color: #00b32d;
+  }
+  
+  .button.cancel {
+    background-color: #6c757d;
+  }
+  
+  .button.cancel:hover {
+    background-color: #5a6268;
+  }
+  
+  .button.delete {
+    background-color: red;
+  }
+  
+  .button.delete:hover {
+    background-color: darkred;
+  }
+  
+  /* User List */
+  .user-list {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .user-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  

@@ -14,8 +14,6 @@ import GetResult from './screens/GetResult';
 import Appointment from './screens/Appointment';
 import VehicleRegisteration from './screens/VehicleRegisteration';
 
-
-
 function App() {
   return (
     <div className="App">
@@ -29,7 +27,7 @@ function App() {
         <Route path='GetResult'element={<GetResult/>}/>
         <Route path='Appointment'element={<Appointment/>}/>
         <Route path='VehicleRegisteration'element={<VehicleRegisteration/>}/>
-      </Routes>
+
 
       <ToastContainer/>
     </div>

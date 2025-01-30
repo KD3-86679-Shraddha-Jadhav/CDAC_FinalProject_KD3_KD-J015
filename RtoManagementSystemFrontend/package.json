@@ -10,7 +10,7 @@
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^11.0.2",
-    "toastify": "^2.0.1"
+
   },
   "scripts": {
     "start": "react-scripts start",

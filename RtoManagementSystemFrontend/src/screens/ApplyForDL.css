@@ -1,0 +1,42 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+ 
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;  /* Green background */
+color: rgb(255, 255, 255);  /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Success/Error message styling */
+  .message {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #28a745;
+  }
+  
+  .error {
+    color: #dc3545;
+  }
+  
