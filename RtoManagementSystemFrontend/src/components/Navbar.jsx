@@ -69,23 +69,17 @@ function Navbar() {
                 GetTestResult
               </Link>
             </li>
-
-<<<<<<< HEAD
             <li className="nav-item">
               <Link className="nav-link" to="/ApplyForDL">Apply for DL</Link>
             </li>
+            
             <li className="nav-item">
               <Link className="nav-link" to="/ApplyForLL">Apply for LL</Link>
             </li>
-            <li>
+            <li className="nav-item">
             <Link className="nav-link" to="/Maintainuser">Maintainuser</Link>
             </li>
-            <li>
-            <Link className="nav-link" to="/QuizApp">QuizApp</Link>
-            </li>
-            
-=======
->>>>>>> ea5e464c972c5cda12d2ef263666f1678c6777b0
+
             <li className='nav-item'>
               <button onClick={onLogout} className='nav-link'>
                 Logout
