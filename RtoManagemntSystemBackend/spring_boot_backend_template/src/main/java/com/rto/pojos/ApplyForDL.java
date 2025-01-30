@@ -44,4 +44,6 @@ public class ApplyForDL extends BaseEntity {
         this.aadharNumber = aadharNumber;
         
     }
+    
+    
 }

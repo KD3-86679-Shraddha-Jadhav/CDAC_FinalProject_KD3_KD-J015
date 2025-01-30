@@ -1,0 +1,11 @@
+package com.rto.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class LicenseReqDto {
+    private String licenseType;
+    private String vehicleType;
+}

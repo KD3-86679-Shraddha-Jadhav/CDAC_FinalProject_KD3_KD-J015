@@ -2,6 +2,7 @@ package com.rto.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.rto.dto.ApiResponse;
 import com.rto.dto.AuthRequest;
 import com.rto.dto.RegDTO;
-import com.rto.pojos.Registeration;
+import com.rto.pojos.User;
 
 import com.rto.service.SignInService;
 import com.rto.service.UserService;
@@ -64,7 +65,7 @@ public class UserController {
 	//update user or admin
 	@PutMapping("/{userId}")
 	public ResponseEntity<?> updateUserDetails
-	(@PathVariable Long userId, @RequestBody Registeration user) {
+	(@PathVariable Long userId, @RequestBody User user) {
 		System.out.println("in update user " + userId + " " + user);
 
 		return ResponseEntity.ok(
@@ -77,7 +78,7 @@ public class UserController {
 	public ResponseEntity<?> getAllUsers()
 	{
 		System.out.println("in get all users");
-		List<Registeration> user = userService.getAllUsers();
+		List<User> user = userService.getAllUsers();
 		if(user.isEmpty())
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 		return ResponseEntity.ok(user);

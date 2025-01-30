@@ -1,0 +1,5 @@
+package com.rto.service;
+
+public class ExamServiceImpl {
+
+}
