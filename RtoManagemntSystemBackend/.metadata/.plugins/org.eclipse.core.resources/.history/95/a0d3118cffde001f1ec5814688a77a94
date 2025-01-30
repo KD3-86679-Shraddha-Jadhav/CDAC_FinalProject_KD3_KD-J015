@@ -1,0 +1,9 @@
+package com.rto.service;
+
+import com.rto.dto.ApplyForDLReq;
+import com.rto.dto.ApplyForDLResp;
+
+public interface LicenseRenewService {
+
+	ApplyForDLResp renewLicense(Long id, ApplyForDLReq applyForDLReq);
+}

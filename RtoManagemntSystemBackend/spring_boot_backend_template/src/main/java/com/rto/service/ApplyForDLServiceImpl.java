@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rto.dao.ApplyForDLDao;
+import com.rto.dao.LicenseDao;
 import com.rto.dto.ApiResponse;
 import com.rto.dto.ApplyForDLReq;
 import com.rto.dto.ApplyForDLResp;
+import com.rto.dto.LicenseReqDto;
 import com.rto.pojos.ApplyForDL;
-
+import com.rto.pojos.License;
 
 import jakarta.transaction.Transactional;
 
@@ -22,7 +24,8 @@ import jakarta.transaction.Transactional;
 public class ApplyForDLServiceImpl implements ApplyForDLService{
 
 	
-	
+	 @Autowired
+	    private LicenseDao licenseDao;
 		
 
 		@Autowired
@@ -66,4 +69,63 @@ public class ApplyForDLServiceImpl implements ApplyForDLService{
 	
 	}
 
-}
+
+
+//	@Override
+//	public String renewLicense(Long id) {
+//	    ApplyForDL existingApplication = applyForDLDao.findById(id)
+//	            .orElseThrow(() -> new RuntimeException("Driving License application not found!"));
+//
+//	    // Print confirmation instead of updating a field
+//	    System.out.println("Driving License with ID " + id + " has been renewed.");
+//
+//	    return "Driving License renewed successfully!";
+//	}
+
+
+
+//	@Override
+//	public ApplyForDLResp renewLicense(Long id, ApplyForDLReq applyForDLReq) {
+//		ApplyForDL existingApplication = applyForDLDao.findById(id)
+//	            .orElseThrow(() -> new RuntimeException("Driving License application not found!"));
+//
+//	    // Print confirmation instead of updating a field
+//	    System.out.println("Driving License with ID " + id + " has been renewed.");
+//
+//	    return modelMapper.map(existingApplication, ApplyForDLResp.class);
+//	}
+
+//	@Override
+//	public ApplyForDLResp renewLicense(Long id, ApplyForDLReq applyForDLReq) {
+//	    ApplyForDL existingApplication = applyForDLDao.findById(id)
+//	            .orElseThrow(() -> new RuntimeException("Driving License application not found!"));
+//
+//	    // Updating an existing field to trigger an update query (temporary workaround)
+//	    existingApplication.setAadharNumber(existingApplication.getAadharNumber() + "-updated");
+//	    existingApplication.setLearningLicenseNumber(existingApplication.getAadharNumber() + "-updated");
+//
+//	    // Save the updated entity (This will trigger an UPDATE query)
+//	    applyForDLDao.save(existingApplication);
+//
+//	    return modelMapper.map(existingApplication, ApplyForDLResp.class);
+//	}
+	
+//	  @Override
+//	    public LicenseReqDto renewLicense(Long id) {
+//	        // Fetch license details
+//	        License existingLicense = licenseDao.findById(id)
+//	                .orElseThrow(() -> new RuntimeException("License not found with ID: " + id));
+//
+//	        // Update approval status to "YES" for renewal
+//	        existingLicense.setApprove("YES");
+//
+//	        // Save updated license
+//	        licenseDao.save(existingLicense);
+//
+//	        // Return the updated license details as response
+//	        return modelMapper.map(existingLicense, LicenseReqDto.class);
+//	    }
+
+
+	}
+

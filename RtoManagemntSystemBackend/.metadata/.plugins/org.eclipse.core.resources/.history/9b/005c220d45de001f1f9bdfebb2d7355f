@@ -1,0 +1,62 @@
+package com.rto.service;
+
+import java.util.List;
+
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.rto.custom_exception.ApiException;
+import com.rto.dao.UserDao;
+import com.rto.dto.ApiResponse;
+import com.rto.dto.RegDTO;
+
+import com.rto.pojos.Role;
+import com.rto.pojos.User;
+
+@Service
+@Transactional
+public class UserImplService implements UserService {
+
+	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
+	private ModelMapper mapper;
+	
+	@Override
+	public ApiResponse addNewUser(RegDTO dto) {
+		// confirm role
+				if(dto.getRole()==Role.APPLICANT) {
+					//4. map dto -> entity
+					Registeration reg=mapper.map(dto, Registeration.class);			
+					
+					userDao.save(reg);
+					return new ApiResponse("User added ");
+				}
+				
+				throw new ApiException("You must be logged in as User !!!!");
+			}
+
+	@Override
+	public ApiResponse updateUser( User user) {
+		if (userDao.existsById(user.getId())) {
+			userDao.save(user);
+		return new ApiResponse("User Updated !");
+		}
+		return new ApiResponse("Invalid User id");
+	}
+
+	// 2. Admin can view all users
+	@Override
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return userDao.findAll();
+	}
+	
+}
+
+

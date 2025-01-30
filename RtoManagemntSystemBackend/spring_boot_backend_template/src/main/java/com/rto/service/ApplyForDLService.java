@@ -5,6 +5,7 @@ import java.util.List;
 import com.rto.dto.ApiResponse;
 import com.rto.dto.ApplyForDLReq;
 import com.rto.dto.ApplyForDLResp;
+import com.rto.dto.LicenseReqDto;
 
 
 public interface ApplyForDLService {
@@ -16,4 +17,8 @@ public interface ApplyForDLService {
 	
     
     List<ApplyForDLResp>getAll();
+
+    //LicenseReqDto renewLicense(Long id);
+
+	//ApplyForDLResp renewLicense(Long id, ApplyForDLReq applyForDLReq);
 }

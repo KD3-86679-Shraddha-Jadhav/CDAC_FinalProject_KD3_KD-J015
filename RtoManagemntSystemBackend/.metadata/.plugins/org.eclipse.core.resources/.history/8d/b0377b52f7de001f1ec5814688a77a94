@@ -1,0 +1,5 @@
+package com.rto.dao;
+
+public class LicenseDao {
+
+}
