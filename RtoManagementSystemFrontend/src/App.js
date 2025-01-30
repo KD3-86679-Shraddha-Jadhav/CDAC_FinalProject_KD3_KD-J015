@@ -13,10 +13,8 @@ import ApplyForTest from './screens/ApplyForTest';
 import GetResult from './screens/GetResult';
 import Appointment from './screens/Appointment';
 import VehicleRegisteration from './screens/VehicleRegisteration';
-import ApplyForLL from './screens/ApplyForLL'
-import ApplyForDL from './screens/ApplyForDL'
-import Maintainuser from "./screens/Maintainuser"
-import QuizApp from "./screens/QuizApp"
+
+
 function App() {
   return (
     <div className="App">

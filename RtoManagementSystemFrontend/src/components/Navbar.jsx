@@ -70,6 +70,7 @@ function Navbar() {
               </Link>
             </li>
 
+<<<<<<< HEAD
             <li className="nav-item">
               <Link className="nav-link" to="/ApplyForDL">Apply for DL</Link>
             </li>
@@ -83,6 +84,8 @@ function Navbar() {
             <Link className="nav-link" to="/QuizApp">QuizApp</Link>
             </li>
             
+=======
+>>>>>>> ea5e464c972c5cda12d2ef263666f1678c6777b0
             <li className='nav-item'>
               <button onClick={onLogout} className='nav-link'>
                 Logout
