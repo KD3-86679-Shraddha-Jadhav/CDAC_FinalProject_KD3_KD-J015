@@ -1,29 +1,48 @@
 import React, { useState } from "react";
  import "./ApplyForDL.css";
- 
+ import axios from "axios";
 
 function ApplyForDL() {
   // State to hold form values
-  const [learningLicense, setLearningLicense] = useState("");
+  const [learningLicenseNumber, setLearningLicense] = useState("");
   const [aadharNumber, setAadharNumber] = useState("");
   const [message, setMessage] = useState(""); // To hold success/error message
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault(); // Prevent page refresh on submit
 
     // Validate the Learning License and Aadhar Number
-    if (learningLicense.length === 15 && aadharNumber.length === 12) {
+    if (learningLicenseNumber.length !== 15 || aadharNumber.length !== 12){
       // Display success message
-      setMessage("Form Submitted Successfully!");
-      
-      // Optionally, reset the form after success
-      setLearningLicense("");
-      setAadharNumber("");
-    } else {
-      // Show error message if validation fails
       setMessage("Please enter valid Learning License Number and Aadhar Number.");
+      
     }
+      // Prepare form data
+    const formData = {
+      learningLicenseNumber,
+      aadharNumber,
+    };
+
+    try {
+      // Send POST request to backend
+      const result = await axios.post("http://localhost:8080/DrivingLic", formData, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      // Handle success response
+      if (result.status === 201) {
+        setMessage("Driving License Application Submitted Successfully!");
+        setLearningLicense("");
+        setAadharNumber("");
+      } else {
+        setMessage("Failed to apply for Driving License. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setMessage("An error occurred. Please try again later.");
+    }
+      
   };
 
   return (
@@ -37,7 +56,7 @@ function ApplyForDL() {
           <input
             type="text"
             id="learning_license_no"
-            value={learningLicense}
+            value={learningLicenseNumber}
             onChange={(e) => setLearningLicense(e.target.value)}
             required
             pattern="\d{15}"

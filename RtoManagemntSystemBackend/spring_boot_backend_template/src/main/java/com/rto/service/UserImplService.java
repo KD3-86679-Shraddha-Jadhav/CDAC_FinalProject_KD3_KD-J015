@@ -2,6 +2,7 @@ package com.rto.service;
 
 import java.util.List;
 
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,9 @@ import com.rto.custom_exception.ApiException;
 import com.rto.dao.UserDao;
 import com.rto.dto.ApiResponse;
 import com.rto.dto.RegDTO;
-import com.rto.pojos.Registeration;
+
 import com.rto.pojos.Role;
+import com.rto.pojos.User;
 
 @Service
 @Transactional
@@ -28,9 +30,9 @@ public class UserImplService implements UserService {
 	@Override
 	public ApiResponse addNewUser(RegDTO dto) {
 		// confirm role
-				if(dto.getRole()==Role.USER) {
+				if(dto.getRole()==Role.APPLICANT) {
 					//4. map dto -> entity
-					Registeration reg=mapper.map(dto, Registeration.class);			
+					User reg=mapper.map(dto, User.class);			
 					
 					userDao.save(reg);
 					return new ApiResponse("User added ");
@@ -40,7 +42,7 @@ public class UserImplService implements UserService {
 			}
 
 	@Override
-	public ApiResponse updateUser( Registeration user) {
+	public ApiResponse updateUser( User user) {
 		if (userDao.existsById(user.getId())) {
 			userDao.save(user);
 		return new ApiResponse("User Updated !");
@@ -50,7 +52,7 @@ public class UserImplService implements UserService {
 
 	// 2. Admin can view all users
 	@Override
-	public List<Registeration> getAllUsers() {
+	public List<User> getAllUsers() {
 		// TODO Auto-generated method stub
 		return userDao.findAll();
 	}

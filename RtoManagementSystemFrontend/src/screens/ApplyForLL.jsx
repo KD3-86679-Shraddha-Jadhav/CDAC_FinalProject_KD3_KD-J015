@@ -6,14 +6,14 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify'; // For showing toast messages
 import { useNavigate } from 'react-router-dom'; // To navigate after successful registration
-
+import axios from 'axios';
 const ApplyForLL = () => {
   const [fullName, setFullName] = useState('');
   const [dob, setDob] = useState('');
  
-  const [bloodGroup, setBloodGroup] = useState('');
+  const [bloodgroup, setBloodGroup] = useState('');
   const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
+  const [phonenumber, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [vehicleDetails, setVehicleDetails] = useState('');
 
@@ -22,13 +22,35 @@ const ApplyForLL = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!fullName || !dob   || !bloodGroup || !address || !phone || !vehicleDetails || !email) {
+    if (!fullName || !dob   || !bloodgroup || !address || !phonenumber || !vehicleDetails || !email) {
       toast.error('All fields are required!');
       return;
     }
 
+    const formData = {
+      fullName,
+      dob,
+      bloodgroup,
+      address,
+      phonenumber,
+      email,
+      vehicleDetails,
+    };
+    try {
+      const result = await axios.post('http://localhost:8080/learLic', formData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+      if (result.status === 201) {
+
     toast.success('License Registration Successful!');
     navigate('/dashboard');
+      }else {
+        toast.error('Failed to apply for LL.');
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -72,7 +94,7 @@ const ApplyForLL = () => {
                 type="text"
                 className="form-control fs-4"
                 id="bloodGroup"
-                value={bloodGroup}
+                value={bloodgroup}
                 style={{ width: '400px' }} // Set text box size
               />
             </div>
@@ -96,7 +118,7 @@ const ApplyForLL = () => {
                 type="tel"
                 className="form-control fs-4"
                 id="phone"
-                value={phone}
+                value={phonenumber}
                 style={{ width: '400px' }} // Set text box size
               />
             </div>

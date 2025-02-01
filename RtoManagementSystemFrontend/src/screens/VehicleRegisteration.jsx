@@ -2,27 +2,55 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 //import { Link,useNavigate } from 'react-router-dom'
 //import './VehicleRegistration.css'; // Assuming the CSS is in VehicleRegistration.css
-
+import axios from 'axios';
 function VehicleRegistration() {
   // States to store form data
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  // const [phone, setPhone] = useState('');
   const [vehicleType, setVehicleType] = useState('');
   const [vehicleModel, setVehicleModel] = useState('');
-  const [licensePlate, setLicensePlate] = useState('');
+  const [licensePlateNo, setLicensePlate] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
 
   // Function to handle form submission
-  const handleSubmit = () => {
-    if (!firstName || !lastName || !email || !phone || !vehicleType || !vehicleModel || !licensePlate || !address || !city) {
+  const handleSubmit = async () => {
+    debugger;
+    if (!firstName || !lastName || !email || !vehicleType || !vehicleModel || !licensePlateNo || !address || !city) {
       toast.warn('Please fill all fields!');
       return;
     }
+     // Create the vehicle registration object
+     const vehicleData = {
+      firstName,
+      lastName,
+       email,
+       vehicleType,
+      vehicleModel,
+      licensePlateNo,
+      address,
+      city
+    };
+    try {
+      // Send a POST request to the backend
+      const result = await axios.post('http://localhost:8080/VehicleReg', vehicleData);
+      console.log(result)
+
+      // Check if registration was successful
+      if (result['status']== 201) {
+        toast.success('Vehicle registration successful!');
+      } else {
+        toast.error('Registration failed!');
+      }
+    } catch (error) {
+      // Handle error (e.g., API errors)
+      console.error('Error registering vehicle:', error);
+      toast.error('An error occurred. Please try again.');
+    }
     
-    toast.success('Vehicle registration successful!');
+    // toast.success('Vehicle registration successful!');
     // Form submission logic can be added here (e.g., send data to a backend API)
   };
 
@@ -65,7 +93,7 @@ function VehicleRegistration() {
         </div>
 
         {/* Phone Number */}
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Phone Number</label>
           <input 
             type="tel" 
@@ -73,7 +101,7 @@ function VehicleRegistration() {
             onChange={(e) => setPhone(e.target.value)} 
             className="form-control" 
           />
-        </div>
+        </div> */}
 
         {/* Vehicle Type */}
         <div className="form-group">
@@ -107,7 +135,7 @@ function VehicleRegistration() {
           <label>License Plate Number</label>
           <input 
             type="text" 
-            value={licensePlate} 
+            value={licensePlateNo} 
             onChange={(e) => setLicensePlate(e.target.value)} 
             className="form-control" 
           />
