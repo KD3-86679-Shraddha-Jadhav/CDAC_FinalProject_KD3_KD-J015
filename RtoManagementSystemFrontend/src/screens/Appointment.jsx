@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 //import './Appointment.css'; // Assuming the CSS is in Appointment.css
-
+import axios from 'axios';
 function DrivingLicenseAppointment() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -11,18 +11,47 @@ function DrivingLicenseAppointment() {
   const [state, setState] = useState('');
   const [pincode, setPincode] = useState('');
   const [country, setCountry] = useState('');
-  const [isNewLicense, setIsNewLicense] = useState('');
+  //const [isNewLicense, setIsNewLicense] = useState('');
   
   // Function to handle form submission
-  const handleSubmit = () => {
-    if (!firstName || !lastName || !dob || !address || !city || !state || !pincode || !country || isNewLicense === '') {
+  const handleSubmit = async() => {
+    //if (!firstName || !lastName || !dob || !address || !city || !state || !pincode || !country || isNewLicense === '') {
+      if (!firstName || !lastName || !dob || !address || !city || !state || !pincode || !country ) {
       toast.warn('Please fill all the fields.');
       return;
     }
 
-    // Simulate a successful form submission
-    toast.success('Appointment booked successfully!');
+    const formData = {
+      firstName,
+      lastName,
+      dob,
+      address,
+      city,
+      state,
+      pincode,
+      country,
+
+    };
+
+    try {
+      const response = await axios.post('http://localhost:8080/BookAppointment', formData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (response.status === 201) {
+        toast.success('Appointment booked successfully!');
+      } else {
+        toast.error('Failed to book appointment.');
+      }
+    } catch (error) {
+      console.error('Error submitting appointment:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
   };
+
+  //   // Simulate a successful form submission
+  //   toast.success('Appointment booked successfully!');
+  // };
 
   return (
     <div className="appointment-container">
@@ -109,7 +138,7 @@ function DrivingLicenseAppointment() {
           />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Are you interested in applying for a new license?</label>
           <div className="radio-group">
             <label>
@@ -133,7 +162,7 @@ function DrivingLicenseAppointment() {
               Update License
             </label>
           </div>
-        </div>
+        </div> */}
 
         <div className="form-group">
           <button onClick={handleSubmit} className="btn btn-primary">
