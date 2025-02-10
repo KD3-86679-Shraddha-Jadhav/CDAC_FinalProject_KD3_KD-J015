@@ -75,6 +75,7 @@ function VehicleRegistration() {
           <label>Last Name</label>
           <input 
             type="text" 
+            
             value={lastName} 
             onChange={(e) => setLastName(e.target.value)} 
             className="form-control" 

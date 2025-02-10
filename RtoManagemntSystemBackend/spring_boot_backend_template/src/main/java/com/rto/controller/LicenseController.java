@@ -47,7 +47,7 @@ public class LicenseController {
 	 // PUT method for license renewal (Admin only)
 	    @PutMapping("/renew/{id}")
 	    public ResponseEntity<?> renewLicense(@PathVariable Long id, @RequestHeader("Role") String role) {
-	        // ✅ Admin authorization check
+	        //  Admin authorization check
 	        if (!"admin".equalsIgnoreCase(role)) {
 	            return ResponseEntity.status(HttpStatus.FORBIDDEN)
 	                    .body("Only admins can renew licenses.");

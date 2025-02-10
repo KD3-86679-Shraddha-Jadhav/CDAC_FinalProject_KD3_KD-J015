@@ -4,13 +4,19 @@ import java.util.List;
 
 
 import com.rto.dto.ApiResponse;
+import com.rto.dto.AuthRequest;
 import com.rto.dto.RegDTO;
-
+import com.rto.dto.UpdateDTO;
 import com.rto.pojos.User;
 
 public interface UserService {
 
-	ApiResponse addNewUser(RegDTO dto);
-	ApiResponse updateUser( User user);
+	ApiResponse addNewUser(RegDTO dto);  //addAdmin
+	ApiResponse addUsers(RegDTO user);//add user
+
+	ApiResponse updateUser(Long userId,UpdateDTO userDto); //update user
+	//public ApiResponse softDeleteUser(Long userId); //softdelete of user
+
 	List<User> getAllUsers();
+	RegDTO signIn(AuthRequest dto);
 }

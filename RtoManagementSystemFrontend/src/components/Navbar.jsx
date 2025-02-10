@@ -19,7 +19,7 @@ function Navbar() {
         <nav className='navbar navbar-expand-lg bg-primary' data-bs-theme='dark'>
       <div className='container-fluid'>
         <a className='navbar-brand' href='#'>
-          RtoManagementSystem 
+          {/* RTOMANAGEMENTSYSTEM  */}
         </a>
         <button
           className='navbar-toggler'
@@ -36,12 +36,12 @@ function Navbar() {
           <ul className='navbar-nav'>
             <li className='nav-item'>
               <Link className='nav-link' aria-current='page' to='/Register'>
-                Registeration
+                Registration
               </Link>
             </li>
             <li className='nav-item'>
               <Link className='nav-link' aria-current='page' to='/VehicleRegisteration'>
-                VehicleRegisteration
+                VehicleRegistration
               </Link>
             </li>
             {/* <li className='nav-item'>
