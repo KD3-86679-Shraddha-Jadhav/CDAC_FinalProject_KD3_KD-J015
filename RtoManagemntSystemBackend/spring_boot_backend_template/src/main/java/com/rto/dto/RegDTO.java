@@ -25,7 +25,7 @@ public class RegDTO {
 		private String address;
 		private String BloodGroup;
 		private String Password;
-		private int phonenumber;
-		private Role role;
+		private Long phonenumber;
+		//private Role role;
 
 }

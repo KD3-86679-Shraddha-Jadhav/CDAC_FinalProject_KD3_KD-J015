@@ -3,6 +3,7 @@ package com.rto.controller;
 import java.util.List;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -21,21 +22,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.rto.dto.ApiResponse;
 import com.rto.dto.AuthRequest;
 import com.rto.dto.RegDTO;
+import com.rto.dto.UpdateDTO;
 import com.rto.pojos.User;
 
-import com.rto.service.SignInService;
+
 import com.rto.service.UserService;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class UserController {
 	//depcy
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private SignInService signInUser;
+//	@Autowired
+//	private SignInService signInUser;
 	//depcy
 	
 	
@@ -54,7 +57,7 @@ public class UserController {
 	{
 		System.out.println("in user sign in "+dto);
 		try {
-			return ResponseEntity.ok(signInUser.signIn(dto));
+			return ResponseEntity.ok(userService.signIn(dto));
 		} catch (RuntimeException e) {
 			//SC 401 , err mesg
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
@@ -62,16 +65,25 @@ public class UserController {
 		}
 	}
 	
-	//update user or admin
-	@PutMapping("/{userId}")
-	public ResponseEntity<?> updateUserDetails
-	(@PathVariable Long userId, @RequestBody User user) {
-		System.out.println("in update user " + userId + " " + user);
-
-		return ResponseEntity.ok(
-				userService.updateUser(user));
-
-	}
+//	//update user or admin
+//	@PutMapping("/{userId}")
+//	public ResponseEntity<?> updateUserDetails
+//	(@PathVariable Long userId, @RequestBody User user) {
+//		System.out.println("in update user " + userId + " " + user);
+//
+//		return ResponseEntity.ok(
+//				userService.updateUser(user));
+//
+//	}
+	
+	//update user 
+    @PutMapping("/update/{userId}")
+    public ResponseEntity<?> updateUserDetails(@PathVariable Long userId,@RequestBody UpdateDTO user)
+    {
+    	System.out.println("in update user " + userId + " " + user);
+    
+    return ResponseEntity.ok(userService.updateUser(userId, user));
+    }
 	
 	//get all users by admin
 	@GetMapping
